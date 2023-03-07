@@ -25,3 +25,28 @@ $('.fire-btn').click(function() {
 
 });
 
+$(document).ready(function() {
+
+  $('.fire-btn').click(function() {
+
+    var bullet = $(this).siblings('.bullet');
+
+    var gun = $(this).parent();
+
+    var gunWidth = gun.outerWidth();
+
+    var bulletWidth = bullet.outerWidth();
+
+    var bulletPos = gunWidth / 2 - bulletWidth / 2;
+
+    
+
+    bullet.css({left: bulletPos}).show().animate({top: -100}, 1000, function() {
+
+      $(this).hide();
+
+    });
+
+  });
+
+});
